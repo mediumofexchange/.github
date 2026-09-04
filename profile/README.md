@@ -34,7 +34,7 @@ exchange, a stablecoin and a neighbour's word.
 | | |
 |---|---|
 | **[money-from-first-principles](https://github.com/mediumofexchange/money-from-first-principles)** | The paper — why, the derivation, the law, what emerges, the limits. And the protocol: [Construction](https://github.com/mediumofexchange/money-from-first-principles/blob/main/construction.md) is the normative core, [Extensions](https://github.com/mediumofexchange/money-from-first-principles/blob/main/extensions.md) the optional profiles on top of it. |
-| **[reference-ts](https://github.com/mediumofexchange/reference-ts)** | TypeScript reference implementation of the transparent setting. 784 tests, one file per invariant. `@mediumofexchange/reference` |
+| **[reference-ts](https://github.com/mediumofexchange/reference-ts)** | TypeScript reference implementation of the transparent setting, with invariant tests and an optional durable local payment pilot. |
 | **[mediumofexchange.github.io](https://github.com/mediumofexchange/mediumofexchange.github.io)** | The front door at [mediumofexchange.org](https://mediumofexchange.org). |
 
 ## Three names, three jobs
@@ -51,12 +51,22 @@ They change at different rates, so they are kept apart.
 
 ## Status
 
-Early. The protocol has one implementation, and it is a reference rather than a
-product — code to read and check the derivation against, not code to run
-anything on. The wire format is not stable. Nothing here has been deployed,
-audited, or used for anything that matters.
+The protocol has an experimental transparent reference implementation. The
+API and wire format can change; there has been no completed security audit.
 
-**None of it has been built yet.** That is the work.
+The package is not published to npm. With Node.js 20 or newer, build from source:
+
+```sh
+git clone https://github.com/mediumofexchange/reference-ts.git
+cd reference-ts
+npm ci
+npm run check
+```
+
+With Node.js 24, run `npm run pilot:demo` to exercise the optional
+[local payment pilot](https://github.com/mediumofexchange/reference-ts/blob/main/docs/PILOT.md).
+Its witness is local and trusted; the pilot tests payment verification,
+restart, retries, and redemption.
 
 ## Licence
 
