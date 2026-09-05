@@ -34,7 +34,7 @@ exchange, a stablecoin and a neighbour's word.
 | | |
 |---|---|
 | **[money-from-first-principles](https://github.com/mediumofexchange/money-from-first-principles)** | The paper — why, the derivation, the law, what emerges, the limits. And the protocol: [Construction](https://github.com/mediumofexchange/money-from-first-principles/blob/main/construction.md) is the normative core, [Extensions](https://github.com/mediumofexchange/money-from-first-principles/blob/main/extensions.md) the optional profiles on top of it. |
-| **[reference-ts](https://github.com/mediumofexchange/reference-ts)** | TypeScript reference implementation of the transparent setting, with invariant tests and an optional durable local payment pilot. |
+| **[reference-ts](https://github.com/mediumofexchange/reference-ts)** | TypeScript reference implementation: canonical encoding, commitments, sequencing, presentation, dishonour, succession and recovery with one test file per invariant; a real-proof experiment for the shielded pool; a frozen transparent path kept as an oracle; a local two-process pilot. |
 | **[mediumofexchange.github.io](https://github.com/mediumofexchange/mediumofexchange.github.io)** | The front door at [mediumofexchange.org](https://mediumofexchange.org). |
 
 ## Three names, three jobs
@@ -51,8 +51,9 @@ They change at different rates, so they are kept apart.
 
 ## Status
 
-The protocol has an experimental transparent reference implementation. The
-API and wire format can change; there has been no completed security audit.
+The protocol has one experimental reference implementation, building
+Construction's core claim layer, the shielded pool, rule by rule. The API and
+wire format can change; there has been no completed security audit.
 
 The package is not published to npm. With Node.js 20 or newer, build from source:
 
@@ -63,10 +64,11 @@ npm ci
 npm run check
 ```
 
-With Node.js 24, run `npm run pilot:demo` to exercise the optional
-[local payment pilot](https://github.com/mediumofexchange/reference-ts/blob/main/docs/PILOT.md).
-Its witness is local and trusted; the pilot tests payment verification,
-restart, retries, and redemption.
+With Node.js 24, `npm run pilot:demo` runs the
+[local pilot](https://github.com/mediumofexchange/reference-ts/blob/main/docs/PILOT.md)
+on the transparent path across two processes, with restart, retries and
+redemption. Its witness is local and trusted; it is an integration harness,
+not a product.
 
 ## Licence
 
