@@ -34,7 +34,7 @@ exchange, a stablecoin and a neighbour's word.
 | | |
 |---|---|
 | **[money-from-first-principles](https://github.com/mediumofexchange/money-from-first-principles)** | The paper — why, the derivation, the law, what emerges, the limits. And the protocol: [Construction](https://github.com/mediumofexchange/money-from-first-principles/blob/main/construction.md) is the normative core, [Extensions](https://github.com/mediumofexchange/money-from-first-principles/blob/main/extensions.md) the optional profiles on top of it. |
-| **[reference-ts](https://github.com/mediumofexchange/reference-ts)** | TypeScript reference implementation: canonical encoding, commitments, sequencing, presentation, dishonour, succession and recovery with one test file per invariant; a real-proof experiment for the shielded pool; a frozen transparent path kept as an oracle; a local two-process pilot. |
+| **[reference-ts](https://github.com/mediumofexchange/reference-ts)** | Experimental shielded-pool implementation: private notes, public supply replay, canonical history, receipt readers and durable sequencing. Recovery is modeled; the wallet and external witness write side remain to be built. |
 | **[mediumofexchange.github.io](https://github.com/mediumofexchange/mediumofexchange.github.io)** | The front door at [mediumofexchange.org](https://mediumofexchange.org). |
 
 ## Three names, three jobs
@@ -55,20 +55,11 @@ The protocol has one experimental reference implementation, building
 Construction's core claim layer, the shielded pool, rule by rule. The API and
 wire format can change; there has been no completed security audit.
 
-The package is not published to npm. With Node.js 20 or newer, build from source:
-
-```sh
-git clone https://github.com/mediumofexchange/reference-ts.git
-cd reference-ts
-npm ci
-npm run check
-```
-
-With Node.js 24, `npm run pilot:demo` runs the
+The package is not published to npm. Follow the implementation's
+[setup and verification instructions](https://github.com/mediumofexchange/reference-ts#readme)
+to build from source. Its
 [local pilot](https://github.com/mediumofexchange/reference-ts/blob/main/docs/PILOT.md)
-on the transparent path across two processes, with restart, retries and
-redemption. Its witness is local and trusted; it is an integration harness,
-not a product.
+remains a transparent-path integration harness with a trusted local witness.
 
 ## Licence
 
