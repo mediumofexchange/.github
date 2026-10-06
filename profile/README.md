@@ -14,8 +14,9 @@ and an experimental implementation.
 | [Website](https://github.com/mediumofexchange/mediumofexchange.github.io) | The static project overview at [mediumofexchange.org](https://mediumofexchange.org). |
 
 The reference implements private notes, public supply replay, canonical history,
-receipt readers and durable sequencing. Runtime recovery, a pool wallet and
-external witness publication are still in development. There is no published
+receipt readers, durable sequencing, runtime recovery, a seed-restorable pool
+wallet and Ergo publication, with real proofs on reference venues and live on
+the Ergo testnet. Qualified custody and mainnet use remain open. There is no published
 npm release or completed security audit; API and wire formats can change.
 
 See the [implementation status](https://github.com/mediumofexchange/reference-ts/blob/main/docs/IMPLEMENTATION_STATUS.md)
