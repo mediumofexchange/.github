@@ -28,7 +28,7 @@ Each repository must remain usable alone; CLAUDE.md only imports `@AGENTS.md`.
 - Documentation/tooling need focused self-review; consensus, custody, parsers, cryptography, authorization and other sensitive changes need independent adversarial review before merge. Delegate bounded outcomes with sources and acceptance criteria; one primary integrates, writers own disjoint files or worktrees.
 - Keep durable instructions in AGENTS.md, operational status in WORK.md, reasoning in the decision log and history in Git. Record choices neutrally; do not quote conversations or attribute authority to a person/model.
 - Disposable probes and build copies go in the repository's ignored scratch/ and are deleted when their slice is delivered, together with merged branches and worktrees. Keep only what WORK.md retains. No clones or dependency trees at this workspace root.
-- The product-effort estimate lives only in reference-ts/WORK.md; report it when it materially changes or is requested. After each completed slice, recommend staying with the instance or switching, based on next work and context freshness.
+- The product-effort estimate (one number for the complete project, no range) lives only in reference-ts/WORK.md; report it when it materially changes or is requested. After each completed slice, recommend staying with the instance or switching, based on next work and context freshness.
 
 The host is Windows with Git Bash and PowerShell; see reference-ts/AGENTS.md for
 environment practice (absolute paths, detached jobs, concurrent sessions).
